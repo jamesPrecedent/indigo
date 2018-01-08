@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="en" class="lt-ie9 lt-ie8 no-js"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="lt-ie9 no-js"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset=utf-8 />
+	<meta name="author" content="UCL" />
+	<meta name="description" content="UCL Homepage" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- social meta -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@uclnews">
+	<meta name="twitter:title" content="UCL - London's Global University">
+	<meta name="twitter:description" content="UCL (University College London) is London's leading multidisciplinary university, with 8,000 staff and 25,000 students.">
+	<meta name="twitter:creator" content="@UCLWAMS">
+	<meta name="twitter:image:src" content="http://www.ucl.ac.uk/visual-identity/logos/standalone.png">
+	<meta property="og:image" content="http://www.ucl.ac.uk/visual-identity/logos/standalone.png"/>
+	<meta property="og:title" content="UCL - London's Global University"/>
+	<meta property="og:url" content="http://www.ucl.ac.uk"/>
+	<meta property="og:site_name" content="UCL"/>
+	<meta property="og:description" content="UCL (University College London) is London's leading multidisciplinary university, with 8,000 staff and 25,000 students."/>
+	<meta property="og:type" content="website"/> 
+	<meta property="og:profile_id" content="uclofficial"/>
+	<!-- end social meta -->
+	<title>UCL Design Language</title>
+
+    <link href="//static.ucl.ac.uk/indigo/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="./css/homepage.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+	<!--[if IE]><link href="//static.ucl.ac.uk/indigo/css/ie.min.css" rel="stylesheet" /><![endif]-->
+	<!--[if lt IE 8]><link href="//static.ucl.ac.uk/indigo/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
+
+ 
+	<link rel="shortcut icon" href="//static.ucl.ac.uk/indigo/images/favicon.ico" />
+	<link rel="apple-touch-icon-precomposed" href="favicon-152.png">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="favicon-144.png">
+
+	<script src="//static.ucl.ac.uk/indigo/js/lib/modernizr-custom.js"></script>
+
+	<script>
+		var cuttingTheMustard = document.querySelector && window.localStorage && window.addEventListener;
+
+		Modernizr.load({
+		//cutting the mustard as used by the BBC
+		test : cuttingTheMustard
+		//if old browser load the shiv
+		,nope : [
+		'//static.ucl.ac.uk/indigo/js/lib/html5shiv-printshiv.min.js'
+		,'//static.ucl.ac.uk/indigo/js/lib/respond.min.js'
+		]
+	});
+	//set conditional assets for main.js
+	var globalSiteSpecificVars = {
+		pathToJquery: '//static.ucl.ac.uk/indigo/js/lib/jquery-1.9.1.min'
+		,googleAnalyticsIdsArray: []//specify array of site specific id's NOT UCL generic UA-943297-1
+	}
+	if(cuttingTheMustard){
+		globalSiteSpecificVars.pathToJquery = "//static.ucl.ac.uk/indigo/js/lib/jquery-2.1.1.min";
+	}
+</script>
+
+<script src="//static.ucl.ac.uk/indigo/js/lib/require.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+	require(["app/general","app/searchWithAutoComplete"]);//load the default stuff
+</script>
+
+<script>
+    FontAwesomeConfig = { searchPseudoElements: true };
+</script>
+<script defer src="//use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+</head>
+
+<body id="index" class="layout-vertical layout-vertical--nav-2col
+">
+
+	<header class="header">
+		<div class="masthead">
+			<div class="wrapper clearfix">
+				<nav class="masthead__nav m-clear">
+                    <ul class="masthead__list">
+                        <li class="masthead__item"><a href="/" class="masthead__link">UCL Home</a>
+                        </li>
+                        <li class="masthead__item"><a href="/prospective-students" class="masthead__link">Prospective students</a>
+                        </li>
+                        <li class="masthead__item"><a href="/students" class="masthead__link">Current students</a>
+                        </li>
+                        <li class="masthead__item"><a href="/staff" class="masthead__link">Staff</a>
+                        </li>
+                        <li class="masthead__item"><a href="/business" class="masthead__link">Business</a>
+                        </li>
+                        <li class="masthead__item"><a href="//www.ucl.ac.uk/campaign" class="give-link masthead__link">Give <i class="fas fa-angle-right"></i></a>
+	                    </li>
+                    </ul>
+                </nav>
+
+				<div class="masthead__search">
+                    <form action="//search2.ucl.ac.uk/s/search.html" method="get">
+                        <div class="search-form">
+                            <input type="search" placeholder="Search UCL websites, people and more" class="search-form__input search-form__input--search" value="">
+                        </div>
+                        <input type="hidden" name="collection" value="website-meta">
+                        <input type="hidden" name="profile" value="_website">
+                        <input type="hidden" name="tab" value="websites">
+                        <input type="submit" name="submit" value="Go" class="btn btn--primary search-form__input search-form__input--submit" />
+                    </form>
+                </div>
+			</div>
+
+		</div><!-- end .masthead -->
+
+        <div class="wrapper">
+            <a class="header header__open" href="#"><img src="//cdn.ucl.ac.uk/img/blank.gif" class="lazy" data-src="//static.ucl.ac.uk/skins/UCLProspectiveStudentsUGSkin/ug-theme/images/ucl-menu.svg" alt="Menu" /></a>
+            <div class="photograph">
+                <div class="brand">
+                    <p class="brand__heading">LONDON'S GLOBAL UNIVERSITY</p>
+                    <a href="/" class="brand__link">
+                        <span class="visually-hidden">Home</span>
+                    </a>
+                    <img src="//cdn.ucl.ac.uk/indigo/images/ucl-logo.svg" alt="UCL logo" id="logo" class="brand__logo">
+                </div>
+                
+            </div><!-- end .photograph -->
+        </div><!-- end .wrapper -->
+
+    </header><!-- end .header -->
+    
+    <div class="hero hero--video">
+        <div class="hero__content">
+            <!-- <video class="bg-video" poster="images/uclherostill.jpg" playsinline autoplay muted loop>
+                <source src="videos/uclhero.mp4" type="video/mp4">
+            </video> -->
+        </div>
+    </div>
+
+    <div class="row row--white">
+	    <div class="site-content wrapper clearfix">
+            <div class="hero__title">
+                <h1>An intellectual powerhouse with a radical spirit</h1>
+            </div>
+            <div class="announcement">
+                <a href="#">
+                    <p>Register now for our next undergraduate open day on 22 November 2017</p>
+                    <i class="arrow-white-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row row--white">
+	    <div class="site-content wrapper clearfix">
+            <div class="news__introduction">
+                <h3>Discover how our research changes the world</h3>
+                <p>Read about the groundbreaking discoveries of our academics and students.</p>
+                <div class="slick__desktop__controls">
+
+                </div>
+            </div>
+            <div class="news__carousel">
+                <div class="slick-carousel">
+                    <div class="news__item">
+                        <div class="news__image">
+                            <img src="images/news-image-protest.jpg" alt="">
+                        </div>
+                        <div class="news__content">
+                            <h4>Understanding the human cost of austerity and cuts</h4>
+                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                        </div>
+                    </div>
+
+                    <div class="news__item">
+                        <div class="news__image">
+                            <img src="images/news-image-design.jpg" alt="">
+                        </div>
+                        <div class="news__content">
+                            <h4>Understanding the human cost of austerity and cuts</h4>
+                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                        </div>
+                    </div>
+
+                    <div class="news__item">
+                        <div class="news__image">
+                            <img src="images/news-image-health.jpg" alt="">
+                        </div>
+                        <div class="news__content">
+                            <h4>Understanding the human cost of austerity and cuts</h4>
+                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                        </div>
+                    </div>
+                    <div class="news__item">
+                        <div class="news__image">
+                            <img src="images/news-image-health.jpg" alt="">
+                        </div>
+                        <div class="news__content">
+                            <h4>Understanding the human cost of austerity and cuts</h4>
+                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        globalSiteSpecificVars.slickCarouselConfig = {
+            slidesToShow: 1.05,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,                
+            mobileFirst: true,
+            adaptiveHeight: false,
+            infinite: false,
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: true,
+                    appendArrows: '.slick__desktop__controls',
+                    appendDots: '.slick__desktop__controls',
+                }
+            }]
+        };
+        require(["app/slick-carousel"]);
+    </script>
+
+
+    <div class="row">
+		<div class="site-content__inner clearfix">
+
+			<div class="site-content__body">
+
+				<nav class="breadcrumb clearfix">
+					<ul class="breadcrumb__list">
+						<li class="breadcrumb__item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb__item breadcrumb__item--current">My Page</li>
+					</ul>
+				</nav>
+				<!--End .breadcrumb-->
+
+				<!-- start main slot where silva content gets rendered-->
+
+				<div class="site-content__main">
+
+					<article class="article">
+
+						<h1>Main page title</h1>
+
+						<p>This is the main content column.</p>
+
+						<h2>UCL banner</h2>
+
+						<p>You can brand the UCL banner with your site colour by adding a 'background-color' to the '.photograph' class</p>
+
+						<p>If you would instead like to use a photograph in the banner add the class '.photograph--show' to the '.photograph' div and assign your image to this class in the css</p>
+
+					</article>
+
+					
+
+				</div>
+
+				<div class="site-content__sidebar">
+
+					<h1>Sidebar</h1>
+
+					<p>Supporting content, patterns or related links can be placed in the sidebar</p>
+
+				</div>
+
+				<!-- end main slot where silva content gets rendered-->
+
+			</div>
+
+			
+		</div>
+
+
+	</div><!-- end .site-content -->
+
+    <footer class="footer"> 
+        <div class="footer__inner wrapper clearfix">
+            <div class="footer__social clearfix">
+                <div class="block block--col-1">
+                    <h2 class="as-h5">Follow UCL</h2>
+                    <ul class="social__list list-unstyled">
+                        <li class="social__item">
+                            <a href="https://twitter.com/ucl" target="_blank">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.facebook.com/uclofficial" target="_blank">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.instagram.com/ucl/" target="_blank">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="http://www.youtube.com/ucltv" target="_blank">
+                                <i class="fab fa-youtube fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://soundcloud.com/uclsound" target="_blank">
+                                <i class="fab fa-soundcloud fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="http://www.flickr.com/photos/uclnews" target="_blank">
+                                <i class="fab fa-flickr fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://medium.com/ucl-antenna" target="_blank">
+                                <i class="fab fa-medium fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="block block--col-2">
+                    <h2 class="as-h5">Follow [Department / Faculty / UCL Culture…]</h2>
+                    <ul class="social__list social__list--dept list-unstyled">
+                        <li class="social__item">
+                            <a href="https://twitter.com/ucl">
+                                <i class="fab fa-twitter fa-lg"></i target="_blank">
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.facebook.com/uclofficial" target="_blank">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.instagram.com/ucl/" target="_blank">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="http://www.youtube.com/ucltv" target="_blank">
+                                <i class="fab fa-youtube fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://soundcloud.com/uclsound" target="_blank">
+                                <i class="fab fa-soundcloud fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="http://www.flickr.com/photos/uclnews" target="_blank">
+                                <i class="fab fa-flickr fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://medium.com/ucl-antenna" target="_blank">
+                                <i class="fab fa-medium fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__links clearfix">
+                <article class="block block--col-1">
+                    <h2 class="as-h5">UCL facilities</h2>
+                    <ul class="footer__list list-unstyled">
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/departments/faculties">Faculties and departments</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/library/">Library</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/museums">Museums and Collections</a></li>
+                        <li class="footer__item"><a href="http://www.thebloomsbury.com/">UCL Bloomsbury Theatre</a></li>
+                    </ul>
+                </article>
+                <article class="block block--col-2">
+                    <h2 class="as-h5">UCL locations</h2>
+                    <ul class="footer__list list-unstyled">
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/maps">Maps and buildings</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/london">UCL and London</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/global">UCL Global</a></li>
+                    </ul>
+                </article>
+                <article class="block block--col-3">
+                    <h2 class="as-h5">Connect with UCL</h2>
+                    <ul class="footer__list list-unstyled">
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/alumni">Alumni</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/enterprise">Businesses</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/media">Media Relations</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/hr/jobs/">Jobs</a></li>
+                        <li class="footer__item"><a href="http://www.ucl.ac.uk/makeyourmark">Support us</a></li>
+                    </ul>
+                </article>
+            </div>
+            <div class="footer__details clearfix">
+                <div class="block block--col-1">
+                    <address>
+                        University College London,<br>
+                        Gower Street,<br>
+                        London,<br>
+                        WC1E 6BT<br>
+                        Tel:&nbsp;+44&nbsp;(0)&nbsp;20 7679 2000
+                    </address>
+                </div>
+
+                <div class="block block--col-2">
+                    <div class="footer__details-util">
+                        <span class="copyright-text small">Copyright &copy; 2018 UCL</span>
+                        <ul class="list-inline footer__list list-unstyled list-inline--divided">
+                            <li class="small"><a href="#">Disclaimer</a>
+                            </li>
+                            <li class="small"><a href="#">Freedom of Information</a>
+                            </li>
+                            <li class="small"><a href="#">Accessibility</a>
+                            </li>
+                            <li class="small"><a href="#">Privacy</a>
+                            </li>
+                            <li class="small"><a href="#">Cookies</a>
+                            </li>
+                            <li class="small"><a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	
+
+</body>
+</html>

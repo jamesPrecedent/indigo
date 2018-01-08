@@ -17,7 +17,9 @@ getassetLocation = function(){
 			break;
 		}
 	}
-	return assetDomain + libLocation;
+	// return assetDomain + libLocation;
+
+	return 'http://localhost:8888/UCL/js/lib/'
 
 }
 
@@ -40,6 +42,7 @@ require.config({
 		,jwplayer: 'jwplayer'
 		,handleBars: 'handlebars.min'
 		,typeAheadBundle:  'typeahead.bundle.min'
+		,slick: '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min'
 	}
 	,shim:{
 		allsite: {
@@ -71,6 +74,9 @@ require.config({
 		},
 		handleBars : {
 			exports: 'Handlebars'
+		},
+		slick: {
+			deps: ['jquery']
 		}
 	}
 });
