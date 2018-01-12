@@ -24,7 +24,7 @@
 	<!-- end social meta -->
 	<title>UCL Design Language</title>
 
-    <link href="//static.ucl.ac.uk/indigo/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="./css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="./css/homepage.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
 	<!--[if IE]><link href="//static.ucl.ac.uk/indigo/css/ie.min.css" rel="stylesheet" /><![endif]-->
@@ -36,7 +36,7 @@
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="msapplication-TileImage" content="favicon-144.png">
 
-	<script src="//static.ucl.ac.uk/indigo/js/lib/modernizr-custom.js"></script>
+	<script src="js/lib/modernizr-custom.js"></script>
 
 	<script>
 		var cuttingTheMustard = document.querySelector && window.localStorage && window.addEventListener;
@@ -46,24 +46,28 @@
 		test : cuttingTheMustard
 		//if old browser load the shiv
 		,nope : [
-		'//static.ucl.ac.uk/indigo/js/lib/html5shiv-printshiv.min.js'
-		,'//static.ucl.ac.uk/indigo/js/lib/respond.min.js'
+		'js/lib/html5shiv-printshiv.min.js'
+		,'js/lib/respond.min.js'
 		]
 	});
 	//set conditional assets for main.js
 	var globalSiteSpecificVars = {
-		pathToJquery: '//static.ucl.ac.uk/indigo/js/lib/jquery-1.9.1.min'
+		pathToJquery: 'js/lib/jquery-1.9.1.min'
 		,googleAnalyticsIdsArray: []//specify array of site specific id's NOT UCL generic UA-943297-1
 	}
 	if(cuttingTheMustard){
-		globalSiteSpecificVars.pathToJquery = "//static.ucl.ac.uk/indigo/js/lib/jquery-2.1.1.min";
+		globalSiteSpecificVars.pathToJquery = "http://localhost:8888/UCL/js/lib/jquery-2.1.1.min";
 	}
+
+    // globalSiteSpecificVars.pathToJquery = '//search2.ucl.ac.uk/search/js/jquery/jquery-1.7.1.min';
+    // globalSiteSpecificVars.ugCollectionYear = 'ug-degrees-current';
 </script>
 
-<script src="//static.ucl.ac.uk/indigo/js/lib/require.min.js"></script>
+<script src="js/lib/require.min.js"></script>
 <script src="js/main.js"></script>
 <script>
-	require(["app/general","app/searchWithAutoComplete"]);//load the default stuff
+    require(["app/general","app/searchWithAutoComplete"]);//load the default stuff
+    require(["app/ug-search", "app/home-course-finder"]);
 </script>
 
 <script>
@@ -126,14 +130,17 @@
 
     </header><!-- end .header -->
     
+    <!-- Hero Video -->
     <div class="hero hero--video">
         <div class="hero__content">
-            <!-- <video class="bg-video" poster="images/uclherostill.jpg" playsinline autoplay muted loop>
+            <img src="images/uclherostill.jpg" alt="">
+            <video class="bg-video" poster="images/uclherostill.jpg" playsinline autoplay muted loop>
                 <source src="videos/uclhero.mp4" type="video/mp4">
-            </video> -->
+            </video>
         </div>
     </div>
 
+    <!-- Hero Title/Announcement -->
     <div class="row row--white">
 	    <div class="site-content wrapper clearfix">
             <div class="hero__title">
@@ -141,143 +148,724 @@
             </div>
             <div class="announcement">
                 <a href="#">
-                    <p>Register now for our next undergraduate open day on 22 November 2017</p>
+                    <h3>Register now for our next undergraduate open day on 22 November 2017</h3>
                     <i class="arrow-white-right"></i>
                 </a>
             </div>
-        </div>
-    </div>
+        </div> <!-- end .site-content -->
+    </div> <!-- end .row.row--white -->
     
-
+    <!-- Research News -->
     <div class="row row--white">
 	    <div class="site-content wrapper clearfix">
             <div class="news__introduction">
-                <h3>Discover how our research changes the world</h3>
+                <h2>Discover how our research changes the world</h2>
                 <p>Read about the groundbreaking discoveries of our academics and students.</p>
-                <div class="slick__desktop__controls">
+                <div class="news__desktop__controls owl-nav">
+                    <!-- Populated with Owl Carousel 2 JS -->
+                    <div class="controls__paging"></div>
+                    <div class="controls__nav"></div>
+                </div>
+            </div><!-- end .news__introduction -->
+            <div class="news__carousel__wrapper">
+                <div class="news__carousel">
+                    <div class="owl-carousel2">
+                        <div class="news__item">
+                            <div class="news__image">
+                                <img src="images/news-image-protest.jpg" alt="">
+                            </div>
+                            <div class="news__content">
+                                <h3>Understanding the human cost of austerity and cuts</h3>
+                                <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                            </div>
+                        </div>
 
+                        <div class="news__item">
+                            <div class="news__image">
+                                <img src="images/news-image-design.jpg" alt="">
+                            </div>
+                            <div class="news__content">
+                                <h3>Understanding the human cost of austerity and cuts</h3>
+                                <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                            </div>
+                        </div>
+
+                        <div class="news__item">
+                            <div class="news__image">
+                                <img src="images/news-image-health.jpg" alt="">
+                            </div>
+                            <div class="news__content">
+                                <h3>Understanding the human cost of austerity and cuts</h3>
+                                <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                            </div>
+                        </div>
+
+                        <div class="news__item news__item--most-read">
+                            <div class="news__content">
+                                <h4>Most read</h4>
+                                <ul>
+                                    <li>Using smart detectors to monitor urban bats</li>
+                                    <li>Leading a rethink on stem cells and regenerative medicine</li>
+                                    <li>Understanding the long-term mental health effects of bullying</li>
+                                </ul>
+                                <a href="#">
+                                    See all UCL News <i class="fas fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- end .owl-carousel2 -->
+                
+                    <div class="news__mobile__controls owl-nav">
+                            <!-- Populated with Owl Carousel 2 JS -->
+                        <div class="controls__paging"></div>
+                    </div>
+                </div> <!-- end .news__carousel -->
+            </div> <!-- end .news__carousel__wrapper -->
+        </div> <!-- end .site-content -->
+    </div> <!-- end .row.row--white -->
+
+    <!-- Study -->
+    <div class="row row--white">
+        <div class="site-content wrapper clearfix">
+            <div class="study__carousel">
+                <h2>Study at UCL</h2>
+                <div class="owl-carousel2">
+                    <div class="study__item">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <div class="study__image">
+                            <img src="images/hero-vid-1.jpg" alt="">
+                        </div>
+                        <div class="study__content">
+                            <h3>"I tested new methods for teaching children to read"</h3>
+                            <p class="author">Pauline Washington</p>
+                            <p class="desc">2nd year, BA Education Studies</p>
+                        </div>
+                    </div>
+
+                    <div class="study__item">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <div class="study__image">
+                            <img src="images/hero-vid-1.jpg" alt="">
+                        </div>
+                        <div class="study__content">
+                            <h3>"I tested new methods for teaching children to read"</h3>
+                            <p class="author">Pauline Washington</p>
+                            <p class="desc">2nd year, BA Education Studies</p>
+                        </div>
+                    </div>
+                    <div class="study__item">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <div class="study__image">
+                            <img src="images/hero-vid-1.jpg" alt="">
+                        </div>
+                        <div class="study__content">
+                            <h3>"I tested new methods for teaching children to read"</h3>
+                            <p class="author">Pauline Washington</p>
+                            <p class="desc">2nd year, BA Education Studies</p>
+                        </div>
+                    </div>
+                    <div class="study__item">
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <div class="study__image">
+                            <img src="images/hero-vid-1.jpg" alt="">
+                        </div>
+                        <div class="study__content">
+                            <h3>"I tested new methods for teaching children to read"</h3>
+                            <p class="author">Pauline Washington</p>
+                            <p class="desc">2nd year, BA Education Studies</p>
+                        </div>
+                    </div>
+                </div> <!-- end .owl-carousel2 -->
+
+                <div class="study__desktop__controls owl-nav">
+                    <div class="controls__paging"></div>
+                    <div class="controls__nav"></div>
+                    <!-- Populated with Owl Carousel2 JS -->
+                </div>
+            </div> <!-- end .study__carousel -->
+        </div> <!-- end .site-content -->
+    </div> <!-- end .row.row--white -->
+
+    <!-- Course Finder -->
+    <div class="row row--white">
+        <div class="site-content wrapper clearfix">
+            <div class="course__finder">
+                <div class="course__finder__title">
+                    <h2>Find degrees, short courses and more</h2>
+                </div>
+                <div class="course__finder__form">
+                    <div class="panel-nav">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-angle-left"></i><span class="sr-only">Prev</span></a></li>
+                            <li><a href="#"><span class="dot">1</span></a></li>
+                            <li><a href="#"><span class="dot">2</span></a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i><span class="sr-only">Next</span></a></li>
+                        </ul>
+                    </div>
+                    <form class="form" action="//search2.ucl.ac.uk/s/search.html" method="POST">
+                        <div class="search__panel search__panel--one">
+                            <fieldset class="search-box__fieldset">
+                                <p>What are you looking for?</p>
+                                <div class="form__group">
+                                    <div class="degree__type">
+                                        <select name="" id="">
+                                            <option value="ug">Undergraduate degrees</option>
+                                            <option value="pgt">Postgraduate degrees</option>
+                                            <option value="srt">Short courses</option>
+                                        </select>
+                                    </div>
+                                    <div class="qual__type">
+                                        <select name="" id="">
+                                            <option value="1">Taught (MA, MSc...)</option>
+                                            <option value="2">Research (MPhil, PhD...)</option>
+                                            <option value="3">Teacher training (PGCE...)</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" class="button-next">Next</a>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="search__panel search__panel--two">
+                            <fieldset class="search-box__fieldset">
+                                <p>Search by degree name</p>
+                                <div class="form__group">
+                                    <input name="query" type="search" class="text search-box__search form__control ui-autocomplete-input" placeholder='"Physics" or Psychology"' value="">
+                                    <div class="search-box__submit-wrapper">
+                                    <input type="submit" id="submit" class="search-box__submit" value="Find">
+                                    </div>
+                                    <div class="search__links">
+                                        <div class="search__links--ug">
+                                            <ul class="search__links--top">
+                                                <li><a href="#">Browse A-Z <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Browse by subject areas <i class="fas fa-angle-right"></i></a></li>
+                                            </ul>
+
+                                            <ul class="search__links--bottom">
+                                                <li><a href="#">How to apply <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Useful contacts <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Fees and funding <i class="fas fa-angle-right"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="search__links--pgt">
+                                            <ul class="search__links--top">
+                                                <li><a href="#">Browse A-Z <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Browse by subject areas <i class="fas fa-angle-right"></i></a></li>
+                                            </ul>
+
+                                            <ul class="search__links--bottom">
+                                                <li><a href="#">How to apply <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Useful contacts <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Fees and funding <i class="fas fa-angle-right"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="search__links--short">
+                                            <ul class="search__links--top">
+                                                <li><a href="#">See all course <i class="fas fa-angle-right"></i></a></li>
+                                            </ul>
+
+                                            <ul class="search__links--top">
+                                                <li><a href="#">About short courses at UCL <i class="fas fa-angle-right"></i></a></li>
+                                                <li><a href="#">Useful contact <i class="fas fa-angle-right"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="news__carousel">
-                <div class="slick-carousel">
-                    <div class="news__item">
-                        <div class="news__image">
-                            <img src="images/news-image-protest.jpg" alt="">
-                        </div>
-                        <div class="news__content">
-                            <h4>Understanding the human cost of austerity and cuts</h4>
-                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
-                        </div>
+        </div> <!-- end .site-content -->
+    </div> <!-- end .row.row--white -->
+
+    <!-- Stats -->
+    <div class="row row--white">
+		<div class="site-content site-content--block wrapper clearfix">
+            <div class="statistics">
+                <div class="statistics__block">
+                    <div class="block">
+                        <div class="stat"><span>1st</span></div>
+                        <p>We are rated the number one university in the UK for Research Power</p>
+                    </div>
+                    <div class="block">
+                        <div class="stat"><span>1st</span></div>
+                        <p>We were the first English university to admit students irrespective of their religion or gender</p>
                     </div>
 
-                    <div class="news__item">
-                        <div class="news__image">
-                            <img src="images/news-image-design.jpg" alt="">
-                        </div>
-                        <div class="news__content">
-                            <h4>Understanding the human cost of austerity and cuts</h4>
-                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
-                        </div>
+                    <div class="block">
+                        <div class="stat"><span>7th</span></div>
+                        <p>We are rated seventh in QS World University Rankings</p>
                     </div>
 
-                    <div class="news__item">
-                        <div class="news__image">
-                            <img src="images/news-image-health.jpg" alt="">
+                    <div class="block">
+                        <div class="stat"><span>29</span></div>
+                        <p>We count 29 Nobel laureates amongst our staff and alumni</p>
+                    </div>
+                </div>
+                <a href="#">Learn more about UCL <i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div> <!-- end .row.row--white -->
+
+    <!-- People -->
+    <div class="row row--grey--mobile">
+        <div class="site-content wrapper clearfix">
+            <div class="people">
+                <h2>Meet some of our people</h2>
+                <div class="people-block">
+                    <div class="people__carousel">
+                        <div class="owl-carousel2">
+                            <div class="people__item">
+                                <div class="people__image">
+                                    <img src="images/people-img-1.jpg" alt="">
+                                </div>
+                                <div class="people__content">
+                                    <h3>Revolutionising the way we think about economics</h3>
+                                    <p class="person__name">Mariana Mazzucato</p>
+                                    <p class="person__occ">Professor of Economics Innovation</p>
+                                </div>
+                            </div>
+
+                            <div class="people__item">
+                                <div class="people__image">
+                                    <img src="images/people-img-2.jpg" alt="">
+                                </div>
+                                <div class="people__content">
+                                    <h3>Empowering young people to fundraise for Syrian refugees</h3>
+                                    <p class="person__name">Yahya Abu Seido</p>
+                                    <p class="person__occ">Medicine student</p>
+                                </div>
+                            </div>
+
+                            <div class="people__item">
+                                <div class="people__image">
+                                    <img src="images/people-img-3.jpg" alt="">
+                                </div>
+                                <div class="people__content">
+                                    <h3>Turning ethical fashion into an experience at "Jack Wills"</h3>
+                                    <p class="person__name">Peter Williams</p>
+                                    <p class="person__occ">Alumnus, Bussiness Administration</p>
+                                </div>
+                            </div>
+                        </div> <!-- end .owl-carousel2 -->
+                    
+                        <div class="people__mobile__controls owl-nav">
+                                <!-- Populated with Owl Carousel 2 JS -->
+                            <div class="controls__paging"></div>
                         </div>
-                        <div class="news__content">
-                            <h4>Understanding the human cost of austerity and cuts</h4>
-                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+                    </div> <!-- end .people__carousel -->
+                </div>
+            </div>
+        </div>
+    </div> <!-- end .row.row-grey--mobile -->
+
+    <!-- UCL News -->
+    <div class="row row--grey">
+        <div class="site-content wrapper clearfix">
+            <div class="ucl__news">
+                <h2>UCL News</h2>
+                <div class="ucl__news__main">
+                    <div class="ucl__news__item">
+                        <a href="#">
+                            <div class="ucl__news__image">
+                                <img src="images/ucl-news-hero.jpg" alt="">
+                            </div>
+                            <div class="ucl__news__content">
+                                <h3>UCL stages first overseas graduation for Chinese students</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ucl__news__sub">
+                    <div class="ucl__news__item">
+                        <a href="#">
+                            <div class="ucl__news__image">
+                                <img src="images/ucl-news-sub-1.jpg" alt="">
+                            </div>
+                            <div class="ucl__news__content">
+                                <h3>UCL and Google host women and the Industrial Strategy event</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="ucl__news__item">
+                        <a href="#">
+                            <div class="ucl__news__image">
+                                <img src="images/ucl-news-sub-2.jpg" alt="">
+                            </div>
+                            <div class="ucl__news__content">
+                                <h3>UCL in bid to create new generation of “green” electronics</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="ucl__news__item">
+                        <a href="#">
+                            <div class="ucl__news__image">
+                                <img src="images/ucl-news-sub-3.jpg" alt="">
+                            </div>
+                            <div class="ucl__news__content">
+                                <h3>Mayor launches T-charge for “dirtiest” polluting vehicles during UCL visit</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="ucl__news__item">
+                        <a href="#">
+                            <div class="ucl__news__image">
+                                <img src="images/ucl-news-sub-4.jpg" alt="">
+                            </div>
+                            <div class="ucl__news__content">
+                                <h3>Professor Graeme Reid appointed to Research England Council</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end .row.row--grey -->
+
+    <!-- Insta -->
+    <div class="row row--white">
+        <div class="site-content site-content--block wrapper clearfix">
+            <div class="social__instagram">
+                <h2><i class="fab fa-instagram"></i> #loveUCL on Instagram</h2>
+                <div class="social__instagram__intro">
+                    <p>Share your experiences of campus life in our #loveUCL Instagram competition.</p>
+                    <a href="#">Follow us <i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="social__instagram__block">
+                    <div class="block">
+                        <img src="images/insta-img-1.jpg" alt="">
+                    </div>
+                    <div class="block">
+                        <img src="images/insta-img-2.jpg" alt="">
+                    </div>
+                    <div class="block">
+                        <img src="images/insta-img-3.jpg" alt="">
+                    </div>
+                    <div class="block">
+                        <img src="images/insta-img-4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end .row.row--white -->
+
+    <!-- Events -->
+    <div class="row row--grey">
+        <div class="site-content site-content--block wrapper clearfix">
+            <div class="social__events">
+                <h2>Discover what’s on at UCL</h2>
+                <div class="social__events__featured">
+                    <div class="event__item">
+                        <div class="event__image">
+                            <img src="images/event-feature.jpg" alt="">
+                        </div>
+                        <div class="event__content">
+                            <div class="event__header">
+                                <p class="event-date">
+                                    <time datetime="2017-09-21">21 Sep</time> - 
+                                    <time datetime="2017-12-22">22 Dec</time>
+                                </p>
+                                <p class="event-category">Exhibition</p>
+                            </div>
+                            <h3>The Museum of Ordinary Animals</h3>
+                            <p class="event-location">UCL Grant Museum of Zoology</p>
+                            <p class="event-fee">Free</p>
+                            <p class="event-desc">This exhibition tells the story of the boring beasts that have changed the world: the mundane creatures in our everyday lives including dogs, pigeons, cats, cows, chickens and mice...</p>
+
+                            <a href="#"><i class="cta-arrow"></i></a>
                         </div>
                     </div>
-                    <div class="news__item">
-                        <div class="news__image">
-                            <img src="images/news-image-health.jpg" alt="">
+                </div>
+                <div class="social__events__carousel">
+                    <div class="owl-carousel2">
+                        <div class="event__item">
+                            <div class="event__content">
+                                <div class="event__header">
+                                    <p class="event-date">
+                                        <time datetime="2017-11-14">14 Nov</time>
+                                    </p>
+                                    <p class="event-category">Talk</p>
+                                </div>
+                                <h3>Miles Better: In Conversation with Gergely Raccuja</h3>
+                                <p class="event-time">
+                                    <time datetime="2017-11-14T18:00">18:00</time> - 
+                                    <time datetime="2017-11-14T20:00">20:00</time>
+                                </p>
+                                <p class="event-location">Cruciform Lecture Theatre</p>
+                                <p class="event-desc">Gergely Raccuja graduated from UCL in 2015 with First Class Honours in Politics, Urban Planning and Italian. Earlier this year, he beat...</p>
+    
+                                <a href="#"><i class="cta-arrow"></i></a>
+                            </div>
                         </div>
-                        <div class="news__content">
-                            <h4>Understanding the human cost of austerity and cuts</h4>
-                            <p>Health and social care spending cuts since 2010 are linked to nearly 120,000 excess deaths in England, with the over 60s and care home residents most affected, finds new UCL research.</p>
+
+                        <div class="event__item">
+                            <div class="event__content">
+                                <div class="event__header">
+                                    <p class="event-date">
+                                        <time datetime="2017-11-20">20 Nov</time>
+                                    </p>
+                                    <p class="event-category">Lecture</p>
+                                </div>
+                                <h3>UCL Lancet Lecture 2017 – Mrs Lilianne Ploumen</h3>
+                                <p class="event-time">
+                                    <time datetime="2017-11-20T18:00">18:00</time> - 
+                                    <time datetime="2017-11-20T20:00">20:00</time>
+                                </p>
+                                <p class="event-location">Logan Hall</p>
+                                <p class="event-desc">Mrs Lilianne Ploumen, Dutch MP will talk about creating the She Decides international sexual and reproductive healthcare initiative in response...</p>
+    
+                                <a href="#"><i class="cta-arrow"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="event__item">
+                            <div class="event__content">
+                                <div class="event__header">
+                                    <p class="event-date">
+                                        <time datetime="2017-11-07">7 Nov</time> - 
+                                        <time datetime="2017-12-15">15 Dec</time>
+                                    </p>
+                                    <p class="event-category">Exhibition</p>
+                                </div>
+                                <h3>East Side Stories: Londoners in transition</h3>
+                                <p class="event-location">UCL Library</p>
+                                <p class="event-desc">East London has a long and fascinating history of regeneration and change. This exhibition provides snapshots of everyday lives as the metropolis expanded and...</p>
+    
+                                <a href="#"><i class="cta-arrow"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="event__item">
+                            <div class="event__content">
+                                <div class="event__header">
+                                    <p class="event-date">
+                                        <time datetime="2017-11-23">23 Nov</time>
+                                    </p>
+                                    <p class="event-category">Lecture</p>
+                                </div>
+                                <h3>Facsimile cities -Should architects now be making video game worlds?</h3>
+                                <p class="event-time">
+                                    <time datetime="2017-11-23T13:10">13:10</time> - 
+                                    <time datetime="2017-11-23T13:55">13:55</time>
+                                </p>
+                                <p class="event-location">Darwin Lecture Theatre </p>
+                                <p class="event-desc">For centuries, architects have dreamed up new cities and societies. Today, the widespread influence...</p>
+    
+                                <a href="#"><i class="cta-arrow"></i></a>
+                            </div>
+                        </div>
+                    </div> <!-- end .owl-carousel2 -->
+                
+                    <div class="events__mobile__controls owl-nav">
+                            <!-- Populated with Owl Carousel 2 JS -->
+                        <div class="controls__paging"></div>
+                    </div>
+                </div> <!-- end .event__carousel -->
+            </div>
+        </div>
+    </div> <!-- end .row.row--grey -->
+
+    <!-- Soundcloud -->
+    <div class="row row--blue">
+        <div class="site-content wrapper clearfix">
+            <div class="social__soundcloud">
+                <div class="social__soundcloud__wrapper">
+                    <div class="soundcloud__title">
+                        <h2>The latest from UCL Sound</h2>
+                        <a href="#">Follow us <i class="fas fa-angle-right"></i></a>
+                    </div>
+                    <div class="soundcloud__item">
+                        <div class="soundcloud__image">
+                            <img src="images/soundcloud-img.jpg" alt="">
+                        </div>
+                        <div class="soundcloud__content">
+                            <h3>Teaching in the Canadian Arctic - Lecture by the Varkey Foundation Global Teacher Prize Winner</h3>
+                            <p>Maggie MacDonnell reflects on the challenges, opportunities and experiences of teaching in the Canadian Arctic.</p>
+                            <div class="soundcloud__player">
+                                  <iframe width="300" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/344096809&amp;color=%23333333&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_teaser=false&amp;visual=false&amp;show_artwork=false&amp;sharing=false&amp;show_playcount=false"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- end .row.row--blue -->
+
+    <!-- Twitter -->
+    <div class="row row--white">
+        <div class="site-content site-content--block wrapper clearfix">
+            <div class="social__twitter">
+                <h2><i class="fab fa-twitter fa-xs"></i>Follow us on Twitter</h2>
+                
+                <div class="social__twitter__carousel">
+                    <div class="owl-carousel2">
+                        <div class="block">
+                            <p class="tweet">
+                                Our task is to 'confront the unimaginable' says @ChrisRapley3131 @ES_UCL after @WMO shows increase in global warming
+                            </p>
+                            <div class="twitter__details">
+                                <div class="twitter-icon">
+                                    <img src="images/twitter-ucl-logo.jpg" alt="">
+                                </div>
+                                <div class="twitter__info">
+                                    <p class="twitter-username">UCL</p>
+                                    <p class="twitter-handle">@ucl</p>
+                                </div>
+                            </div>
+                            <a href="#">Follow <i class="fas fa-angle-right"></i></a>
+                        </div>
+                        <div class="block">
+                            <p class="tweet">
+                                Today a George Orwell statue is unveiled at BBC HQ. @UCLSpecColl hosts the George Orwell Archive <a href="#">https://www.ucl.ac.uk/news/news-articles/1117/071117-orwell-bbc…</a>
+                            </p>
+                            <div class="twitter__details">
+                                <div class="twitter-icon">
+                                    <img src="images/twitter-ucl-news-logo.jpg" alt="">
+                                </div>
+                                <div class="twitter__info">
+                                    <p class="twitter-username">UCL News</p>
+                                    <p class="twitter-handle">@uclnews</p>
+                                </div>
+                            </div>
+                            <a href="#">Follow <i class="fas fa-angle-right"></i></a>
+                        </div>
+                        <div class="block">
+                            <p class="tweet">
+                                A UCL-led project to connect lonely older people to museums wins 2 prestigious Royal Society of Public Health Awards <a href="#">http://bit.ly/2lIoXUT</a>
+                            </p>
+                            <div class="twitter__details">
+                                <div class="twitter-icon">
+                                    <img src="images/twitter-ucl-news-logo.jpg" alt="">
+                                </div>
+                                <div class="twitter__info">
+                                    <p class="twitter-username">UCL News</p>
+                                    <p class="twitter-handle">@uclnews</p>
+                                </div>
+                            </div>
+                            <a href="#">Follow <i class="fas fa-angle-right"></i></a>
+                        </div>
+                        <div class="block">
+                            <p class="tweet">
+                                Big tech firms' AI hiring frenzy leads to brain drain at UK universities including UCL and Oxford <a href="#">https://www.theguardian.com/science/2017/nov/02/big-tech-firms-google...</a>
+                            </p>
+                            <div class="twitter__details">
+                                <div class="twitter-icon">
+                                    <img src="images/twitter-ucl-news-logo.jpg" alt="">
+                                </div>
+                                <div class="twitter__info">
+                                    <p class="twitter-username">UCL News</p>
+                                    <p class="twitter-handle">@uclnews</p>
+                                </div>
+                            </div>
+                            <a href="#">Follow <i class="fas fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="twitter__mobile__controls owl-nav">
+                        <!-- Populated with Owl Carousel 2 JS -->
+                    <div class="controls__paging"></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end .row.row--white -->
 
     <script>
-        globalSiteSpecificVars.slickCarouselConfig = {
-            slidesToShow: 1.05,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true,                
-            mobileFirst: true,
-            adaptiveHeight: false,
-            infinite: false,
-            responsive: [{
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2,
-                    arrows: true,
-                    appendArrows: '.slick__desktop__controls',
-                    appendDots: '.slick__desktop__controls',
+        // Array of object for the carousels
+        globalSiteSpecificVars.carouselConfig = [{
+            carouselClass: '.news__carousel .owl-carousel2',
+            carouselSettings: {
+                loop: false,
+                margin: 10,
+                responsive: {
+                    0:{
+                        items: 1,
+                        dots: true,
+                        nav: false,
+                        dotsContainer: '.news__mobile__controls .controls__paging'
+                    },
+                    767:{
+                        items: 2,
+                        nav: true,
+                        stagePadding: 50,
+                        navContainer: '.news__desktop__controls .controls__nav',
+                        dotsContainer: '.news__desktop__controls .controls__paging',
+                    }
                 }
-            }]
-        };
-        require(["app/slick-carousel"]);
+            }
+        },{
+            carouselClass: '.study__carousel .owl-carousel2',
+            carouselSettings: {
+                margin: 10,
+                items: 1,
+                lazyLoad:true,
+                video: true,
+                loop: false,
+                margin: 10,
+                navContainer: '.study__desktop__controls .controls__nav',
+                dotsContainer: '.study__desktop__controls .controls__paging',
+                responsive: {
+                    0:{
+                        dots: true,
+                        nav: false
+                    },
+                    767:{
+                        nav: true,
+                        stagePadding: 50
+                    }
+                }
+            }
+        },
+        {
+            carouselClass: '.people__carousel .owl-carousel2',
+            mobileOnly: true,
+            carouselSettings: {
+                margin: 10,
+                items: 1,
+                lazyLoad:true,
+                loop: false,
+                margin: 10,
+                nav: false,
+                dotsContainer: '.people__mobile__controls .controls__paging',
+                stagePadding: 20
+            }
+        }, {
+            carouselClass: '.social__events__carousel .owl-carousel2',
+            mobileOnly: true,
+            carouselSettings: {
+                margin: 10,
+                items: 1,
+                lazyLoad:true,
+                loop: false,
+                margin: 10,
+                nav: false,
+                dotsContainer: '.events__mobile__controls .controls__paging',
+                stagePadding: 20
+            }
+        }, {
+            carouselClass: '.social__twitter__carousel .owl-carousel2',
+            mobileOnly: true,
+            carouselSettings: {
+                margin: 10,
+                items: 1,
+                lazyLoad:true,
+                loop: false,
+                margin: 10,
+                nav: false,
+                dotsContainer: '.twitter__mobile__controls .controls__paging',
+                stagePadding: 20
+            }
+        }];
+        require(["app/owl-carousel2"]);
+
     </script>
 
-
-    <div class="row">
-		<div class="site-content__inner clearfix">
-
-			<div class="site-content__body">
-
-				<nav class="breadcrumb clearfix">
-					<ul class="breadcrumb__list">
-						<li class="breadcrumb__item"><a href="index.html">Home</a></li>
-						<li class="breadcrumb__item breadcrumb__item--current">My Page</li>
-					</ul>
-				</nav>
-				<!--End .breadcrumb-->
-
-				<!-- start main slot where silva content gets rendered-->
-
-				<div class="site-content__main">
-
-					<article class="article">
-
-						<h1>Main page title</h1>
-
-						<p>This is the main content column.</p>
-
-						<h2>UCL banner</h2>
-
-						<p>You can brand the UCL banner with your site colour by adding a 'background-color' to the '.photograph' class</p>
-
-						<p>If you would instead like to use a photograph in the banner add the class '.photograph--show' to the '.photograph' div and assign your image to this class in the css</p>
-
-					</article>
-
-					
-
-				</div>
-
-				<div class="site-content__sidebar">
-
-					<h1>Sidebar</h1>
-
-					<p>Supporting content, patterns or related links can be placed in the sidebar</p>
-
-				</div>
-
-				<!-- end main slot where silva content gets rendered-->
-
-			</div>
-
-			
-		</div>
-
-
-	</div><!-- end .site-content -->
+    
 
     <footer class="footer"> 
         <div class="footer__inner wrapper clearfix">

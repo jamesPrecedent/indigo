@@ -34,15 +34,17 @@ require.config({
 		,templates: '../templates'
 		//libaries
 		,jquery: globalSiteSpecificVars.pathToJquery
+		,jqueryUi: 'jquery-ui-1.8.18-custom.min'
+		,jqueryTmpl: 'jquery.tmpl.min'
 		,underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min'
 		,backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min'
 		,fastclick: 'fastclick'
 		,googleAnalyticsLib: 'googleAnalytics.min'
 		,owl: 'owl.carousel.min'
+		,owl2: '//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min'
 		,jwplayer: 'jwplayer'
 		,handleBars: 'handlebars.min'
 		,typeAheadBundle:  'typeahead.bundle.min'
-		,slick: '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min'
 	}
 	,shim:{
 		allsite: {
@@ -65,8 +67,17 @@ require.config({
 		owl: {
 			deps: ['jquery']
 		},
+		owl2: {
+			deps: ['jquery']
+		},
+		jqueryUi: {
+			deps: ['jquery']
+		},
 		jwplayer: {
 			exports: 'jwplayer'
+		},
+		jqueryTmpl: {
+			deps: ['jquery']
 		},
 		typeAheadBundle: {
 			deps: ['jquery']
@@ -74,9 +85,6 @@ require.config({
 		},
 		handleBars : {
 			exports: 'Handlebars'
-		},
-		slick: {
-			deps: ['jquery']
 		}
 	}
 });
