@@ -45,6 +45,8 @@ require.config({
 		,jwplayer: 'jwplayer'
 		,handleBars: 'handlebars.min'
 		,typeAheadBundle:  'typeahead.bundle.min'
+		,fontAwesome: '//use.fontawesome.com/releases/v5.0.2/js/all'
+		,easyAuto: '//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete'
 	}
 	,shim:{
 		allsite: {
@@ -85,6 +87,9 @@ require.config({
 		},
 		handleBars : {
 			exports: 'Handlebars'
+		},
+		easyAuto: {
+			deps: ['jquery']
 		}
 	}
 });

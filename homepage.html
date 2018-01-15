@@ -26,6 +26,12 @@
 
     <link href="./css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="./css/homepage.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css">
+    <style>
+        .easy-autocomplete-container ul {
+            margin: 0;
+        }
+    </style>
 
 	<!--[if IE]><link href="//static.ucl.ac.uk/indigo/css/ie.min.css" rel="stylesheet" /><![endif]-->
 	<!--[if lt IE 8]><link href="//static.ucl.ac.uk/indigo/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
@@ -57,23 +63,26 @@
 	}
 	if(cuttingTheMustard){
 		globalSiteSpecificVars.pathToJquery = "http://localhost:8888/UCL/js/lib/jquery-2.1.1.min";
-	}
+    }
+    
+    globalSiteSpecificVars.course = '';
+    globalSiteSpecificVars.qual = '';
+    FontAwesomeConfig = { searchPseudoElements: true };
 
     // globalSiteSpecificVars.pathToJquery = '//search2.ucl.ac.uk/search/js/jquery/jquery-1.7.1.min';
-    // globalSiteSpecificVars.ugCollectionYear = 'ug-degrees-current';
+    // globalSiteSpecificVars.collection = 'ug-degrees-current';
 </script>
 
 <script src="js/lib/require.min.js"></script>
 <script src="js/main.js"></script>
 <script>
     require(["app/general","app/searchWithAutoComplete"]);//load the default stuff
-    require(["app/ug-search", "app/home-course-finder"]);
+    require(["app/ug-search", "app/home-course-finder", "fontAwesome", "easyAuto"]);
 </script>
 
 <script>
-    FontAwesomeConfig = { searchPseudoElements: true };
 </script>
-<script defer src="//use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+<!-- <script defer src="//use.fontawesome.com/releases/v5.0.2/js/all.js"></script> -->
 </head>
 
 <body id="index" class="layout-vertical layout-vertical--nav-2col
@@ -289,17 +298,21 @@
     <!-- Course Finder -->
     <div class="row row--white">
         <div class="site-content wrapper clearfix">
-            <div class="course__finder">
+            <div class="course__finder" data-training-url="http://localhost:8888/prospective-students/graduate/teacher-training/degrees">
                 <div class="course__finder__title">
-                    <h2>Find degrees, short courses and more</h2>
+                    <h2 class="default-title">Find degrees, short courses and more</h2>
+                    <h2 class="secondary-title secondary-title--ug">Find an undergraduate degree</h2>
+                    <h2 class="secondary-title secondary-title--pgt-taught">Find a postgraduate taught degree (MA, MSc, MRes)</h2>
+                    <h2 class="secondary-title secondary-title--pgt-research">Find a postgraduate research degree</h2>
+                    <h2 class="secondary-title secondary-title--short">Find short courses</h2>
                 </div>
                 <div class="course__finder__form">
                     <div class="panel-nav">
                         <ul>
-                            <li><a href="#"><i class="fas fa-angle-left"></i><span class="sr-only">Prev</span></a></li>
-                            <li><a href="#"><span class="dot">1</span></a></li>
-                            <li><a href="#"><span class="dot">2</span></a></li>
-                            <li><a href="#"><i class="fas fa-angle-right"></i><span class="sr-only">Next</span></a></li>
+                            <li><a href="#" class="arrow-prev"><i class="fas fa-angle-left"></i><span class="sr-only">Prev</span></a></li>
+                            <li><a href="#" class="dot dot-one"><span>1</span></a></li>
+                            <li><a href="#" class="dot dot-two"><span>2</span></a></li>
+                            <li><a href="#" class="arrow-next"><i class="fas fa-angle-right"></i><span class="sr-only">Next</span></a></li>
                         </ul>
                     </div>
                     <form class="form" action="//search2.ucl.ac.uk/s/search.html" method="POST">
@@ -311,14 +324,14 @@
                                         <select name="" id="">
                                             <option value="ug">Undergraduate degrees</option>
                                             <option value="pgt">Postgraduate degrees</option>
-                                            <option value="srt">Short courses</option>
+                                            <option value="short">Short courses</option>
                                         </select>
                                     </div>
                                     <div class="qual__type">
                                         <select name="" id="">
-                                            <option value="1">Taught (MA, MSc...)</option>
-                                            <option value="2">Research (MPhil, PhD...)</option>
-                                            <option value="3">Teacher training (PGCE...)</option>
+                                            <option value="taught">Taught (MA, MSc...)</option>
+                                            <option value="research">Research (MPhil, PhD...)</option>
+                                            <option value="training">Teacher training (PGCE...)</option>
                                         </select>
                                     </div>
                                     <a href="#" class="button-next">Next</a>
@@ -365,7 +378,7 @@
                                                 <li><a href="#">See all course <i class="fas fa-angle-right"></i></a></li>
                                             </ul>
 
-                                            <ul class="search__links--top">
+                                            <ul class="search__links--bottom">
                                                 <li><a href="#">About short courses at UCL <i class="fas fa-angle-right"></i></a></li>
                                                 <li><a href="#">Useful contact <i class="fas fa-angle-right"></i></a></li>
                                             </ul>
