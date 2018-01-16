@@ -922,7 +922,21 @@ body {
       list-style: none;
       margin-bottom: 2.4rem; }
   .news__item--most-read a {
-    color: rgba(70, 147, 234, 0.9); }
+    color: rgba(70, 147, 234, 0.9);
+    font-size: 16px;
+    font-size: 1.6rem;
+    letter-spacing: 0.03rem; }
+    .news__item--most-read a svg {
+      font-size: 14px;
+      margin-left: .6rem;
+      margin-top: .8em;
+      position: relative;
+      right: 0;
+      transition: all .2s ease-in-out; }
+    .news__item--most-read a:hover {
+      text-decoration: none; }
+      .news__item--most-read a:hover svg {
+        right: -.3rem; }
 
 .owl-carousel2.owl-off {
   display: block; }
@@ -976,7 +990,8 @@ body {
   top: 15.3rem;
   width: 41px;
   height: 41px;
-  background-image: url("../images/video-play.svg"); }
+  background-image: url("../images/video-play.svg");
+  transition: all .2s ease-in-out; }
   @media only screen and (max-width: 767px) {
     .owl-carousel2 .owl-video-play-icon {
       top: 5rem;
@@ -1002,11 +1017,17 @@ body {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  transition: all .5s ease-in-out; }
   .owl-nav .owl-prev:before,
   .owl-nav .owl-next:before {
     display: none;
     font-family: "Font Awesome 5 Solid"; }
+  .owl-nav .owl-prev:hover,
+  .owl-nav .owl-next:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #4693ea; }
   .owl-nav .owl-prev svg,
   .owl-nav .owl-next svg {
     margin-top: .8rem; }
@@ -1049,6 +1070,8 @@ body {
               transform: translateY(-50%); }
     .controls__paging .owl-dot.active:before {
       background-color: #1a78e3; }
+    .controls__paging .owl-dot:hover {
+      cursor: pointer; }
 
 div[class*="mobile__controls"].owl-nav,
 div[class*="desktop__controls"].owl-nav {
@@ -1175,6 +1198,11 @@ div[class*="desktop__controls"].owl-nav {
             font-size: 12px;
             font-size: 1.2rem;
             line-height: 1.5; } }
+  .people a h3, .people a p {
+    color: #333333; }
+  .people a:hover h3, .people a:hover p {
+    color: #333333;
+    text-decoration: underline; }
 
 /* 
 * Pattern name: Photograph banner
@@ -1596,7 +1624,14 @@ div[class*="desktop__controls"].owl-nav {
     .social__instagram a svg {
       font-size: 12px;
       margin-left: .6rem;
-      margin-top: .11rem; }
+      margin-top: .11rem;
+      position: relative;
+      right: 0;
+      transition: all .2s ease-in-out; }
+    .social__instagram a:hover {
+      text-decoration: none; }
+      .social__instagram a:hover svg {
+        right: -.3rem; }
 
 /* 
 * Pattern name: Social list
@@ -1726,7 +1761,14 @@ div[class*="desktop__controls"].owl-nav {
   .social__soundcloud a svg {
     font-size: 14px;
     margin-left: .6rem;
-    margin-top: .8em; }
+    margin-top: .8em;
+    position: relative;
+    right: 0;
+    transition: all .2s ease-in-out; }
+  .social__soundcloud a:hover {
+    text-decoration: none; }
+    .social__soundcloud a:hover svg {
+      right: -.3rem; }
 
 /* 
 * Pattern name: Twitter
@@ -1816,6 +1858,8 @@ div[class*="desktop__controls"].owl-nav {
             flex-basis: 45%; }
         .social__twitter .block:nth-child(even) {
           margin-right: 0; } }
+    .social__twitter .block p.tweet a:hover {
+      text-decoration: underline; }
   .social__twitter .twitter__details {
     display: -ms-flexbox;
     display: flex;
@@ -1855,11 +1899,19 @@ div[class*="desktop__controls"].owl-nav {
     color: rgba(70, 147, 234, 0.9);
     font-size: 16px;
     font-size: 1.6rem;
-    letter-spacing: 0.03rem; }
+    letter-spacing: 0.03rem;
+    margin-top: 1.2rem; }
     .social__twitter a svg {
       font-size: 12px;
       margin-left: .6rem;
-      margin-top: .11rem; }
+      margin-top: .11rem;
+      position: relative;
+      right: 0;
+      transition: all .2s ease-in-out; }
+    .social__twitter a:hover {
+      text-decoration: none; }
+      .social__twitter a:hover svg {
+        right: -.3rem; }
 
 /* 
 * Pattern name: Statistiocs
@@ -1939,7 +1991,14 @@ div[class*="desktop__controls"].owl-nav {
     .statistics a svg {
       font-size: 14px;
       margin-left: .6rem;
-      margin-top: .8em; }
+      margin-top: .8em;
+      position: relative;
+      right: 0;
+      transition: all .2s ease-in-out; }
+    .statistics a:hover {
+      text-decoration: none; }
+      .statistics a:hover svg {
+        right: -.3rem; }
 
 /* 
 * Pattern name: Study

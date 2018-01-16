@@ -62,7 +62,7 @@
 		,googleAnalyticsIdsArray: []//specify array of site specific id's NOT UCL generic UA-943297-1
 	}
 	if(cuttingTheMustard){
-		globalSiteSpecificVars.pathToJquery = "http://localhost:8888/UCL/js/lib/jquery-2.1.1.min";
+		globalSiteSpecificVars.pathToJquery = "http://templates.precedenthost.co.uk/ucl-home/js/lib/jquery-2.1.1.min";
     }
     
     globalSiteSpecificVars.course = '';
@@ -254,12 +254,12 @@
                     <div class="study__item">
                         <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
                         <div class="study__image">
-                            <img src="images/hero-vid-1.jpg" alt="">
+                            <img src="images/hero-vid-2.jpg" alt="">
                         </div>
                         <div class="study__content">
-                            <h3>"I tested new methods for teaching children to read"</h3>
-                            <p class="author">Pauline Washington</p>
-                            <p class="desc">2nd year, BA Education Studies</p>
+                            <h3>"I mapped 250 stars that could support life"</h3>
+                            <p class="author">Wendy Leung</p>
+                            <p class="desc">4th year, PhD Astrophysicds</p>
                         </div>
                     </div>
                     <div class="study__item">
@@ -276,12 +276,12 @@
                     <div class="study__item">
                         <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
                         <div class="study__image">
-                            <img src="images/hero-vid-1.jpg" alt="">
+                            <img src="images/hero-vid-2.jpg" alt="">
                         </div>
                         <div class="study__content">
-                            <h3>"I tested new methods for teaching children to read"</h3>
-                            <p class="author">Pauline Washington</p>
-                            <p class="desc">2nd year, BA Education Studies</p>
+                            <h3>"I mapped 250 stars that could support life"</h3>
+                            <p class="author">Wendy Leung</p>
+                            <p class="desc">4th year, PhD Astrophysicds</p>
                         </div>
                     </div>
                 </div> <!-- end .owl-carousel2 -->
@@ -431,36 +431,42 @@
                     <div class="people__carousel">
                         <div class="owl-carousel2">
                             <div class="people__item">
-                                <div class="people__image">
-                                    <img src="images/people-img-1.jpg" alt="">
-                                </div>
-                                <div class="people__content">
-                                    <h3>Revolutionising the way we think about economics</h3>
-                                    <p class="person__name">Mariana Mazzucato</p>
-                                    <p class="person__occ">Professor of Economics Innovation</p>
-                                </div>
+                                <a href="#">
+                                    <div class="people__image">
+                                        <img src="images/people-img-1.jpg" alt="">
+                                    </div>
+                                    <div class="people__content">
+                                        <h3>Revolutionising the way we think about economics</h3>
+                                        <p class="person__name">Mariana Mazzucato</p>
+                                        <p class="person__occ">Professor of Economics Innovation</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="people__item">
-                                <div class="people__image">
-                                    <img src="images/people-img-2.jpg" alt="">
-                                </div>
-                                <div class="people__content">
-                                    <h3>Empowering young people to fundraise for Syrian refugees</h3>
-                                    <p class="person__name">Yahya Abu Seido</p>
-                                    <p class="person__occ">Medicine student</p>
-                                </div>
+                                <a href="#">
+                                    <div class="people__image">
+                                        <img src="images/people-img-2.jpg" alt="">
+                                    </div>
+                                    <div class="people__content">
+                                        <h3>Empowering young people to fundraise for Syrian refugees</h3>
+                                        <p class="person__name">Yahya Abu Seido</p>
+                                        <p class="person__occ">Medicine student</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="people__item">
-                                <div class="people__image">
-                                    <img src="images/people-img-3.jpg" alt="">
-                                </div>
-                                <div class="people__content">
-                                    <h3>Turning ethical fashion into an experience at "Jack Wills"</h3>
-                                    <p class="person__name">Peter Williams</p>
-                                    <p class="person__occ">Alumnus, Bussiness Administration</p>
-                                </div>
+                                <a href="#">
+                                    <div class="people__image">
+                                        <img src="images/people-img-3.jpg" alt="">
+                                    </div>
+                                    <div class="people__content">
+                                        <h3>Turning ethical fashion into an experience at "Jack Wills"</h3>
+                                        <p class="person__name">Peter Williams</p>
+                                        <p class="person__occ">Alumnus, Bussiness Administration</p>
+                                    </div>
+                                </a>
                             </div>
                         </div> <!-- end .owl-carousel2 -->
                     
@@ -806,6 +812,7 @@
                         items: 2,
                         nav: true,
                         stagePadding: 50,
+                        slideBy: 2,
                         navContainer: '.news__desktop__controls .controls__nav',
                         dotsContainer: '.news__desktop__controls .controls__paging',
                     }

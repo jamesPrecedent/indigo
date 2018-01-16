@@ -19,7 +19,7 @@ getassetLocation = function(){
 	}
 	// return assetDomain + libLocation;
 
-	return 'http://localhost:8888/UCL/js/lib/'
+	return 'http://templates.precedenthost.co.uk/ucl-home/js/lib/'
 
 }
 
