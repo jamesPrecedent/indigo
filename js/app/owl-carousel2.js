@@ -2,7 +2,45 @@ define(["jquery","owl2"],function($){
 
 	var mobileOnlyCarousel = [];
 
-	$(document).ready(function(){
+	$(document).ready(function() {
+		function mobileCarousel() {
+			var resizeTimeout;
+			var win = $(window);
+
+			if (resizeTimeout) {
+				clearTimeout(resizeTimeout);
+			}
+
+			resizeTimeout = setTimeout(function() {
+				var windowWidth = win.width();
+				if (windowWidth < 767) {
+					mobileOnlyCarousel.forEach(function (el, i) {
+						$(el.carouselClass).removeClass('owl-off');
+						$(el.carouselClass).owlCarousel(el.carouselSettings);
+					});
+				} else {
+					mobileOnlyCarousel.forEach(function (el, i) {
+						$(el.carouselClass).addClass('owl-off');
+						$(el.carouselClass).trigger('destroy.owl.carousel');
+					});
+				}
+			}, 100);
+		}
+
+		function desktopCarousel() {
+			if (carouselConfig.length) {
+				carouselConfig.forEach(function (el, i) {
+					
+					if(el.mobileOnly) {
+						mobileOnlyCarousel.push(el);
+						$(el.carouselClass).addClass('owl-off');
+					} else {
+						$(el.carouselClass).owlCarousel(el.carouselSettings);
+					}
+				});
+			}
+		}
+
 		if(typeof(globalSiteSpecificVars.carouselConfig)==="undefined"){
 			carouselConfig = {
 				stagePadding: 50,
@@ -26,42 +64,14 @@ define(["jquery","owl2"],function($){
 		} else {
 			carouselConfig = (globalSiteSpecificVars.carouselConfig);
 			
-			if (carouselConfig.length) {
-				carouselConfig.forEach(function (el, i) {
-					
-					if(el.mobileOnly) {
-						mobileOnlyCarousel.push(el);
-						$(el.carouselClass).addClass('owl-off');
-					} else {
-						$(el.carouselClass).owlCarousel(el.carouselSettings);
-					}
-				});
-			}
+			desktopCarousel();
 
-			var resizeTimeout;
-			var win = $(window);
-
-			$(window).on('load resize', function() {
-
-				if (resizeTimeout) {
-					clearTimeout(resizeTimeout);
-				}
-
-				resizeTimeout = setTimeout(function() {
-					var windowWidth = win.width();
-					if (windowWidth < 767) {
-						mobileOnlyCarousel.forEach(function (el, i) {
-							$(el.carouselClass).removeClass('owl-off');
-							$(el.carouselClass).owlCarousel(el.carouselSettings);
-						});
-					} else {
-						mobileOnlyCarousel.forEach(function (el, i) {
-							$(el.carouselClass).addClass('owl-off');
-							$(el.carouselClass).trigger('destroy.owl.carousel');
-						});
-					}
-				}, 100);
-			});
+			mobileCarousel();
+			
+			$(window).on('resize', function () {
+				desktopCarousel();
+				mobileCarousel();
+			})
 		}
 	});
 });

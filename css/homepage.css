@@ -121,12 +121,15 @@
     top: 0;
     width: 100%; }
   .brand:before {
-    left: -98%; }
+    left: -95%; }
     @media only screen and (max-width: 767px) {
       .brand:before {
         left: -80%; } }
   .brand:after {
-    right: -98%; }
+    right: -102%; }
+    @media only screen and (max-width: 767px) {
+      .brand:after {
+        right: -100%; } }
   @media only screen and (max-width: 767px) {
     .brand {
       background-image: url("//cdn.ucl.ac.uk/indigo/images/ucl-logo.svg");
@@ -143,18 +146,23 @@
     font-weight: bold; }
     @media screen and (min-width: 766px) and (max-width: 1090px) {
       .brand__heading {
-        left: 7rem; } }
+        left: 6.2rem; } }
     @media only screen and (max-width: 767px) {
       .brand__heading {
         display: none; } }
-  @media only screen and (max-width: 767px) {
-    .brand__link {
-      height: 100%;
-      right: 2%;
-      width: 10rem; } }
-  @media only screen and (max-width: 767px) {
-    .brand__logo {
-      display: none; } }
+  .brand__link {
+    right: -3rem; }
+    @media only screen and (max-width: 767px) {
+      .brand__link {
+        height: 100%;
+        right: 2%;
+        width: 10rem; } }
+  .brand__logo {
+    margin-left: 3.5rem; }
+    @media only screen and (max-width: 767px) {
+      .brand__logo {
+        margin-left: 0;
+        display: none; } }
 
 /* 
 * Pattern name: Course Finder
@@ -202,13 +210,13 @@
     padding: 5rem 3rem 5rem 0;
     -ms-flex-pack: center;
         justify-content: center;
-    min-width: 347px;
+    max-width: 347px;
     overflow: hidden; }
     @media only screen and (max-width: 767px) {
       .course__finder__title {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
-        min-width: 100%;
+        max-width: 100%;
         margin-left: -2rem;
         margin-right: -2rem;
         padding: 3rem 2rem; } }
@@ -222,6 +230,10 @@
       left: 0;
       position: relative;
       transition: left .5s ease-in-out; }
+      @media only screen and (min-width: 768px) and (max-width: 989px) {
+        .course__finder__title h2 {
+          font-size: 36px;
+          font-size: 3.6rem; } }
       @media only screen and (max-width: 767px) {
         .course__finder__title h2 {
           font-size: 24px;
@@ -231,17 +243,24 @@
       .course__finder__title h2.secondary-title {
         left: 100%;
         position: absolute;
-        width: 347px; }
+        width: 347px;
+        padding-right: 3rem; }
+        @media only screen and (min-width: 768px) and (max-width: 989px) {
+          .course__finder__title h2.secondary-title {
+            width: 90%; } }
   .course__finder__form {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex: 2 0 0;
-        flex: 2 0 0;
+    -ms-flex: 1;
+        flex: 1;
     -ms-flex-direction: column;
         flex-direction: column;
     background-color: #efeee8;
-    padding: 5rem 8.4%;
+    padding: 5rem;
     position: relative; }
+    @media screen and (min-width: 766px) and (max-width: 1090px) {
+      .course__finder__form {
+        min-height: 200px; } }
     @media only screen and (max-width: 767px) {
       .course__finder__form {
         -ms-flex: 1;
@@ -259,7 +278,7 @@
       position: absolute;
       right: 0;
       z-index: 1;
-      top: 4.5rem; }
+      top: 2.5rem; }
       @media only screen and (max-width: 767px) {
         .course__finder__form .panel-nav {
           bottom: 1rem;
@@ -314,12 +333,20 @@
         position: relative;
         left: 100%;
         width: 100%; }
+        .course__finder__form .search__panel--two .search-box__submit-wrapper {
+          margin-bottom: 1.2rem; }
+        .course__finder__form .search__panel--two .form__group {
+          margin-bottom: 0; }
     .course__finder__form .form__group {
       position: relative; }
       .course__finder__form .form__group .degree__type,
       .course__finder__form .form__group .qual__type {
         position: relative;
         padding-right: 12.4rem; }
+        @media screen and (min-width: 766px) and (max-width: 1090px) {
+          .course__finder__form .form__group .degree__type,
+          .course__finder__form .form__group .qual__type {
+            padding-right: 0; } }
         @media only screen and (max-width: 767px) {
           .course__finder__form .form__group .degree__type,
           .course__finder__form .form__group .qual__type {
@@ -342,6 +369,10 @@
                   transform: translateY(-50%);
           margin-top: -.3rem;
           pointer-events: none; }
+          @media screen and (min-width: 766px) and (max-width: 1090px) {
+            .course__finder__form .form__group .degree__type svg,
+            .course__finder__form .form__group .qual__type svg {
+              right: 1.2rem; } }
           @media only screen and (max-width: 767px) {
             .course__finder__form .form__group .degree__type svg,
             .course__finder__form .form__group .qual__type svg {
@@ -354,9 +385,15 @@
         border-radius: 0;
         height: 45px;
         -webkit-appearance: none;
+        -moz-appearance: none;
         font-weight: bold;
         line-height: 1.15;
         padding: 0 2rem; }
+        @media screen and (min-width: 766px) and (max-width: 1090px) {
+          .course__finder__form .form__group select {
+            padding-right: 3.5rem; } }
+        .course__finder__form .form__group select::-ms-expand {
+          display: none; }
       .course__finder__form .form__group .button-next,
       .course__finder__form .form__group input[type=submit] {
         font-size: 14px;
@@ -370,6 +407,10 @@
         color: white;
         top: 0;
         border: none; }
+        @media screen and (min-width: 766px) and (max-width: 1090px) {
+          .course__finder__form .form__group .button-next,
+          .course__finder__form .form__group input[type=submit] {
+            position: relative; } }
         @media only screen and (max-width: 767px) {
           .course__finder__form .form__group .button-next,
           .course__finder__form .form__group input[type=submit] {
@@ -392,6 +433,8 @@
       .course__finder__form .form__group .search__links--top {
         border-bottom: solid .1rem #8c8279;
         padding-bottom: 1.7rem; }
+      .course__finder__form .form__group .search__links--bottom {
+        margin-bottom: 0; }
       .course__finder__form .form__group .search__links ul {
         margin-left: 0; }
       .course__finder__form .form__group .search__links li {
@@ -413,6 +456,9 @@
     display: block; }
   .course__finder.show-quals .button-next {
     top: 5.5rem; }
+    @media screen and (min-width: 766px) and (max-width: 1090px) {
+      .course__finder.show-quals .button-next {
+        top: 0; } }
     @media only screen and (max-width: 767px) {
       .course__finder.show-quals .button-next {
         top: 0; } }
@@ -488,7 +534,8 @@
     border-bottom: 0.1rem solid white; }
     @media only screen and (max-width: 767px) {
       .footer__social {
-        margin-bottom: 3.7rem; } }
+        margin-bottom: 3.7rem;
+        border-bottom: none; } }
     @media only screen and (max-width: 767px) {
       .footer__social h2 {
         margin-bottom: 1.8rem; } }
@@ -626,7 +673,7 @@ header .header__open {
   @media only screen and (max-width: 767px) {
     .hero--video {
       margin-top: 5.7rem;
-      height: 190px; } }
+      height: 100%; } }
 
 .hero__title {
   background-color: white;
@@ -748,10 +795,14 @@ body {
       background-color: #333333;
       left: -100%;
       position: absolute;
-      border-bottom: 0; }
-      .masthead .wrapper {
-        background-color: #333333;
-        padding-bottom: 5.5rem; } }
+      border-bottom: 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 989px) {
+    .masthead .wrapper {
+      padding-left: 0; } }
+  @media only screen and (max-width: 767px) {
+    .masthead .wrapper {
+      background-color: #333333;
+      padding-bottom: 5.5rem; } }
   .masthead__item {
     height: 40px; }
   .masthead__list {
@@ -768,7 +819,8 @@ body {
         width: 100%; } }
   .masthead__link {
     font-size: 16px;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    -webkit-font-smoothing: auto; }
   .masthead .give-link {
     background-color: #ea7600;
     color: white;
@@ -783,7 +835,7 @@ body {
         width: 4.5rem; } }
   .masthead__search {
     position: absolute;
-    right: 2.5rem; }
+    right: 0; }
     @media screen and (min-width: 766px) and (max-width: 1090px) {
       .masthead__search {
         right: 0; } }
@@ -803,6 +855,9 @@ body {
       left: auto;
       width: 70%;
       right: 6rem; }
+      @media only screen and (min-width: 768px) and (max-width: 989px) {
+        .masthead__search .search-form {
+          width: 60%; } }
       @media only screen and (max-width: 767px) {
         .masthead__search .search-form {
           margin: 0;
@@ -835,6 +890,17 @@ body {
 * Use: The UCL Research news item
 * Note: Can be used within a carousel
 -------------------------------------------------------------- */
+.news__block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .news__block {
+      -ms-flex-direction: column;
+          flex-direction: column; } }
+
 .news__introduction {
   margin-right: 5%;
   width: 33%;
@@ -947,17 +1013,20 @@ body {
     .owl-carousel2 .owl-stage {
       margin-left: 0; } }
 
-.owl-carousel2 .owl-video-playing .study__image {
+.owl-carousel2 .owl-video-playing .study__image img {
   opacity: 0;
-  transition: opacity .5s ease-out; }
+  transition: opacity .5s ease-out;
+  z-index: -1; }
 
 .owl-carousel2 .owl-video-playing .study__content {
   opacity: 0;
-  transition: opacity .5s ease-out; }
+  transition: opacity .5s ease-out;
+  z-index: -1; }
   @media only screen and (max-width: 767px) {
     .owl-carousel2 .owl-video-playing .study__content {
       opacity: 1;
-      transition: none; } }
+      transition: none;
+      z-index: 3; } }
 
 .owl-carousel2 .owl-stage-outer {
   overflow: visible; }
@@ -983,19 +1052,22 @@ body {
     .owl-carousel2 .owl-video-wrapper {
       background-color: white; } }
 
+.owl-carousel2 .owl-video-frame iframe {
+  height: 100%; }
+
 .owl-carousel2 .owl-video-play-icon {
-  border-radius: 50%;
+  margin: 0;
   z-index: 4;
-  left: 6rem;
-  top: 15.3rem;
-  width: 41px;
-  height: 41px;
+  width: 100%;
+  height: 100%;
   background-image: url("../images/video-play.svg");
+  background-position: 2rem 11.3rem;
+  top: 0;
+  left: 0;
   transition: all .2s ease-in-out; }
   @media only screen and (max-width: 767px) {
     .owl-carousel2 .owl-video-play-icon {
-      top: 5rem;
-      left: 5rem; } }
+      background-position: 2rem 2rem; } }
   .owl-carousel2 .owl-video-play-icon:hover {
     background-image: url("../images/video-play-over.svg");
     -webkit-transform: none;
@@ -1101,7 +1173,8 @@ div[class*="desktop__controls"].owl-nav {
 * Note: N/A
 -------------------------------------------------------------- */
 .people {
-  margin-bottom: 1.2rem; }
+  margin-bottom: 1.2rem;
+  width: 100%; }
   @media only screen and (max-width: 767px) {
     .people {
       margin-right: -2rem; } }
@@ -1213,7 +1286,7 @@ div[class*="desktop__controls"].owl-nav {
 .photograph {
   background-color: #e03c31;
   left: 0;
-  padding-bottom: 10.8%; }
+  padding-bottom: 10.5%; }
   @media only screen and (max-width: 767px) {
     .photograph {
       padding: 0; } }
@@ -1642,9 +1715,9 @@ div[class*="desktop__controls"].owl-nav {
   margin-top: 1.6rem;
   margin-bottom: 0; }
   @media only screen and (max-width: 767px) {
-    .social__list:not(.social__list--dept) {
-      padding-bottom: 2.6rem;
-      border-bottom: 0.1rem solid white; } }
+    .social__list {
+      border-bottom: 0.1rem solid white;
+      padding-bottom: 2.6rem; } }
 
 .social__item {
   display: inline-block;
@@ -1652,7 +1725,8 @@ div[class*="desktop__controls"].owl-nav {
   margin-bottom: 1.2rem; }
   @media only screen and (max-width: 767px) {
     .social__item {
-      width: 20px; } }
+      width: 20px;
+      margin-right: 1.5rem; } }
   .social__item:last-child {
     margin-right: 0; }
   .social__item a {
@@ -2012,22 +2086,16 @@ div[class*="desktop__controls"].owl-nav {
 .study__carousel {
   width: 100%; }
 
-.study__item {
-  position: relative; }
-
 .study__image {
   position: relative;
-  z-index: 2;
   margin-bottom: 0; }
   .study__image img {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    position: relative; }
 
 .study__content {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 0;
   padding: 2rem;
   max-width: 430px;
   z-index: 3; }
@@ -2040,19 +2108,37 @@ div[class*="desktop__controls"].owl-nav {
               transform: translateY(0);
       padding: 2.5rem 1rem 1rem 0; } }
   .study__content h3 {
-    font-size: 30px;
-    font-size: 3rem;
+    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
-    line-height: 1.1;
-    color: white; }
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 12.7rem; }
     @media only screen and (max-width: 767px) {
       .study__content h3 {
-        color: #333333;
-        font-size: 24px;
-        font-size: 2.4rem;
-        line-height: 1.21;
-        margin-bottom: 2.2rem; } }
-  .study__content p {
+        display: none; } }
+  .study__content blockquote {
+    padding: 0;
+    margin-bottom: 1.9rem; }
+    @media only screen and (max-width: 767px) {
+      .study__content blockquote {
+        margin-bottom: 0; } }
+    .study__content blockquote p {
+      font-size: 30px;
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.1;
+      color: white;
+      font-style: normal;
+      margin-bottom: 0; }
+      @media only screen and (max-width: 767px) {
+        .study__content blockquote p {
+          color: #333333;
+          font-size: 24px;
+          font-size: 2.4rem;
+          line-height: 1.21;
+          margin-bottom: 2.2rem; } }
+  .study__content figcaption p {
     font-size: 18px;
     font-size: 1.8rem;
     font-weight: 300;
@@ -2060,13 +2146,13 @@ div[class*="desktop__controls"].owl-nav {
     color: white;
     margin-bottom: 0; }
     @media only screen and (max-width: 767px) {
-      .study__content p {
+      .study__content figcaption p {
         color: #333333;
         font-size: 15px;
         font-size: 1.5rem;
         line-height: 1.8; } }
     @media only screen and (max-width: 767px) {
-      .study__content p.desc {
+      .study__content figcaption p.desc {
         font-size: 12px;
         font-size: 1.2rem;
         line-height: 2.25;
@@ -2099,7 +2185,8 @@ h2 {
   -ms-flex-direction: row;
       flex-direction: row;
   margin-bottom: 3.5rem;
-  margin-top: 4.6rem; }
+  margin-top: 4.6rem;
+  width: 100%; }
   @media only screen and (max-width: 767px) {
     .ucl__news {
       -ms-flex-direction: column;
