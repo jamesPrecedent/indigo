@@ -73,8 +73,8 @@
     width: 100%; }
     @media only screen and (max-width: 989px) {
       .announcement a {
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+        -ms-flex-pack: baseline;
+            justify-content: baseline;
         padding: 2rem 3rem; } }
     @media only screen and (max-width: 767px) {
       .announcement a {
@@ -191,12 +191,18 @@
   .course__finder:before {
     background-color: #0097a9;
     right: 98%; }
+    @media only screen and (min-width: 768px) and (max-width: 989px) {
+      .course__finder:before {
+        right: 97%; } }
     @media only screen and (max-width: 767px) {
       .course__finder:before {
         display: none; } }
   .course__finder:after {
     background-color: #efeee8;
     left: 98%; }
+    @media only screen and (min-width: 768px) and (max-width: 989px) {
+      .course__finder:after {
+        left: 97%; } }
     @media only screen and (max-width: 767px) {
       .course__finder:after {
         display: none; } }
@@ -256,10 +262,8 @@
     display: flex;
     -ms-flex: 1;
         flex: 1;
-    -ms-flex-direction: column;
-        flex-direction: column;
     background-color: #efeee8;
-    padding: 5rem;
+    padding: 5rem 0rem 5rem 5rem;
     position: relative; }
     @media screen and (min-width: 766px) and (max-width: 1090px) {
       .course__finder__form {
@@ -322,7 +326,11 @@
     .course__finder__form form {
       position: relative;
       overflow: hidden;
-      height: 100%; }
+      height: 100%;
+      width: 100%; }
+      @media screen and (min-width: 766px) and (max-width: 1090px) {
+        .course__finder__form form {
+          min-height: 200px; } }
       @media only screen and (max-width: 767px) {
         .course__finder__form form {
           min-height: 200px; } }
@@ -550,9 +558,11 @@
       .footer__social {
         margin-bottom: 3.7rem;
         border-bottom: none; } }
-    @media only screen and (max-width: 767px) {
-      .footer__social h2 {
-        margin-bottom: 1.8rem; } }
+    .footer__social h2 {
+      margin-bottom: 1.2rem; }
+      @media only screen and (max-width: 767px) {
+        .footer__social h2 {
+          margin-bottom: 1.8rem; } }
     @media only screen and (max-width: 767px) {
       .footer__social .social__item {
         margin-bottom: .8rem; } }
@@ -592,9 +602,11 @@
   .footer__links {
     margin-top: 1.6rem;
     border-bottom: 0.1rem solid white; }
-    @media only screen and (max-width: 767px) {
-      .footer__links h2 {
-        margin-bottom: .9rem; } }
+    .footer__links h2 {
+      margin-bottom: .7rem; }
+      @media only screen and (max-width: 767px) {
+        .footer__links h2 {
+          margin-bottom: .9rem; } }
   .footer__list {
     margin-bottom: 1.6rem; }
     @media only screen and (max-width: 767px) {
@@ -1094,9 +1106,7 @@ body {
 .owl-nav .owl-prev,
 .owl-nav .owl-next {
   color: #4693ea;
-  font-size: 35px;
-  font-size: 3.5rem;
-  line-height: normal;
+  line-height: 3.5rem;
   width: 52px;
   height: 52px;
   border: solid .1rem #4693ea;
@@ -1116,7 +1126,9 @@ body {
     background-color: #4693ea; }
   .owl-nav .owl-prev svg,
   .owl-nav .owl-next svg {
-    margin-top: .8rem; }
+    margin-top: .8rem;
+    font-size: 35px;
+    font-size: 3.5rem; }
 
 .owl-nav .owl-prev {
   margin-right: 1.1rem; }
@@ -1516,12 +1528,11 @@ div[class*="desktop__controls"].owl-nav {
   display: flex;
   -ms-flex: 1;
       flex: 1;
-  -ms-flex-direction: column;
-      flex-direction: column;
   margin-right: 1.5rem;
   margin-bottom: 0;
   background-color: white;
-  padding: 2.5rem 1.2rem; }
+  padding: 2.5rem 1.2rem;
+  height: 100%; }
   @media only screen and (min-width: 768px) and (max-width: 989px) {
     .social__events__carousel .event__item {
       -ms-flex-preferred-size: 44%;
@@ -1727,11 +1738,12 @@ div[class*="desktop__controls"].owl-nav {
 -------------------------------------------------------------- */
 .social__list {
   margin-top: 1.6rem;
-  margin-bottom: 0; }
+  margin-bottom: 1.1rem; }
   @media only screen and (max-width: 767px) {
     .social__list {
       border-bottom: 0.1rem solid white;
-      padding-bottom: 2.6rem; } }
+      padding-bottom: 2.6rem;
+      margin-bottom: 0; } }
 
 .social__item {
   display: inline-block;
