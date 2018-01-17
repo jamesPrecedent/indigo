@@ -248,6 +248,9 @@
         @media only screen and (min-width: 768px) and (max-width: 989px) {
           .course__finder__title h2.secondary-title {
             width: 90%; } }
+        @media only screen and (max-width: 767px) {
+          .course__finder__title h2.secondary-title {
+            width: 90%; } }
   .course__finder__form {
     display: -ms-flexbox;
     display: flex;
@@ -409,7 +412,9 @@
         font-weight: bold;
         color: white;
         top: 0;
-        border: none; }
+        border: none;
+        border-radius: none;
+        -webkit-appearance: none; }
         @media screen and (min-width: 766px) and (max-width: 1090px) {
           .course__finder__form .form__group .button-next,
           .course__finder__form .form__group input[type=submit] {
@@ -429,6 +434,10 @@
         background-color: white;
         border: solid .1rem #d6d2c4;
         height: 45px; }
+        @media only screen and (max-width: 767px) {
+          .course__finder__form .form__group input[type=search] {
+            font-size: 16px;
+            font-size: 1.6rem; } }
       .course__finder__form .form__group .qual__type {
         display: none; }
       .course__finder__form .form__group .search__links--ug, .course__finder__form .form__group .search__links--pgt, .course__finder__form .form__group .search__links--short {
