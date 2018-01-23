@@ -22,10 +22,10 @@ define(["jquery"],function($){
 				goToPage();
 				return
 			}
+
 			
 			if ($('.course__finder').hasClass('show-second')) {
-				$('.course__finder').removeClass('show-second');
-				resetPanels();
+				return;
 			} else {
 				var containerHeight = $('.course__finder').height();
 				var panelTwoHeight = $('.search__panel--two').height();
