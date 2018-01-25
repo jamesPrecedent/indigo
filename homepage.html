@@ -111,12 +111,13 @@
 				<div class="masthead__search">
                     <form action="//search2.ucl.ac.uk/s/search.html" method="get">
                         <div class="search-form">
-                            <input type="search" placeholder="Search UCL websites, people and more" class="search-form__input search-form__input--search" value="">
+                            <label for="global-search" class="visually-hidden">Search</label>
+                            <input type="search" id="global-search" placeholder="Search UCL websites, people and more" class="search-form__input search-form__input--search" value="">
                         </div>
                         <input type="hidden" name="collection" value="website-meta">
                         <input type="hidden" name="profile" value="_website">
                         <input type="hidden" name="tab" value="websites">
-                        <input type="submit" name="submit" value="Go" class="btn btn--primary search-form__input search-form__input--submit" />
+                        <input type="submit" name="global-search-submit" id="global-search-submit" value="Go" class="btn btn--primary search-form__input search-form__input--submit" />
                     </form>
                 </div>
 			</div>
@@ -157,7 +158,7 @@
             </div>
             <div class="announcement">
                 <a href="#">
-                    <h3>Register now for our next undergraduate open day on 22 November 2017</h3>
+                    <h2 class="as-h3">Register now for our next undergraduate open day on 22 November 2017</h2>
                     
                     <i class="arrow-white-right"></i>
                 </a>
@@ -250,7 +251,9 @@
                 <div class="owl-carousel2">
                     <div class="study__item">
                         <div class="study__image">
-                            <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                            <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo">
+                                <span class="visually-hidden">Video Title</span>
+                            </a>
                             <img src="images/hero-vid-1.jpg" alt="">
                         </div>
                         <div class="study__content">
@@ -268,7 +271,7 @@
                     </div>
 
                     <div class="study__item">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"><span class="visually-hidden">Video Title</span></a>
                         <div class="study__image">
                             <img src="images/hero-vid-2.jpg" alt="">
                         </div>
@@ -286,7 +289,7 @@
                         </div>
                     </div>
                     <div class="study__item">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"><span class="visually-hidden">Video Title</span></a>
                         <div class="study__image">
                             <img src="images/hero-vid-1.jpg" alt="">
                         </div>
@@ -304,7 +307,7 @@
                         </div>
                     </div>
                     <div class="study__item">
-                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"></a>
+                        <a class="owl-video" href="https://www.youtube.com/watch?v=mp133liHzBo"><span class="visually-hidden">Video Title</span></a>
                         <div class="study__image">
                             <img src="images/hero-vid-2.jpg" alt="">
                         </div>
@@ -358,14 +361,16 @@
                                 <p>What are you looking for?</p>
                                 <div class="form__group">
                                     <div class="degree__type">
-                                        <select name="" id="">
+                                            <label for="degree-type" class="visually-hidden">Select degree type</label>
+                                        <select name="degree-type" id="degree-type">
                                             <option value="ug">Undergraduate degrees</option>
                                             <option value="pgt">Postgraduate degrees</option>
                                             <option value="short">Short courses</option>
                                         </select>
                                     </div>
                                     <div class="qual__type">
-                                        <select name="" id="">
+                                        <label for="qualification-type" class="visually-hidden">Select qualification type</label>
+                                        <select name="qualification-type" id="qualification-type">
                                             <option value="taught">Taught (MA, MSc...)</option>
                                             <option value="research">Research (MPhil, PhD...)</option>
                                             <option value="training">Teacher training (PGCE...)</option>
@@ -379,7 +384,8 @@
                             <fieldset class="search-box__fieldset">
                                 <p>Search by degree name</p>
                                 <div class="form__group">
-                                    <input name="query" type="search" class="text search-box__search form__control ui-autocomplete-input" placeholder='"Physics" or Psychology"' value="">
+                                    <label for="course-search" class="visually-hidden">Course search</label>
+                                    <input name="query" type="search" class="text search-box__search form__control ui-autocomplete-input" placeholder='"Physics" or Psychology"' value="" id="course-search">
                                     <div class="search-box__submit-wrapper">
                                     <input type="submit" id="submit" class="search-box__submit" value="Find">
                                     </div>
@@ -948,36 +954,43 @@
                     <ul class="social__list list-unstyled">
                         <li class="social__item">
                             <a href="https://twitter.com/ucl" target="_blank">
+                                <span class="visually-hidden">UCL Twitter</span>
                                 <i class="fab fa-twitter fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://www.facebook.com/uclofficial" target="_blank">
+                                <span class="visually-hidden">UCL Facebook</span>
                                 <i class="fab fa-facebook-f fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://www.instagram.com/ucl/" target="_blank">
+                                <span class="visually-hidden">UCL Instagram</span>
                                 <i class="fab fa-instagram fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="http://www.youtube.com/ucltv" target="_blank">
+                                <span class="visually-hidden">UCL YouTube</span>
                                 <i class="fab fa-youtube fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://soundcloud.com/uclsound" target="_blank">
+                                <span class="visually-hidden">UCL SoundCloud</span>
                                 <i class="fab fa-soundcloud fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="http://www.flickr.com/photos/uclnews" target="_blank">
+                                <span class="visually-hidden">UCL Flickr</span>
                                 <i class="fab fa-flickr fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://medium.com/ucl-antenna" target="_blank">
+                                <span class="visually-hidden">UCL Medium</span>
                                 <i class="fab fa-medium fa-lg"></i>
                             </a>
                         </li>
@@ -989,36 +1002,43 @@
                     <ul class="social__list social__list--dept list-unstyled">
                         <li class="social__item">
                             <a href="https://twitter.com/ucl">
+                                <span class="visually-hidden">UCL [Dept] Twitter</span>
                                 <i class="fab fa-twitter fa-lg"></i target="_blank">
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://www.facebook.com/uclofficial" target="_blank">
+                                <span class="visually-hidden">UCL [Dept] Facebook</span>
                                 <i class="fab fa-facebook-f fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://www.instagram.com/ucl/" target="_blank">
+                                <span class="visually-hidden">UCL [Dept] Instagram</span>
                                 <i class="fab fa-instagram fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="http://www.youtube.com/ucltv" target="_blank">
+                                <span class="visually-hidden">UCL [Dept] YouTube</span>
                                 <i class="fab fa-youtube fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://soundcloud.com/uclsound" target="_blank">
+                                <span class="visually-hidden">UCL [Dept] SoundCloud</span>
                                 <i class="fab fa-soundcloud fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="http://www.flickr.com/photos/uclnews" target="_blank">
+                                <span class="visually-hidden">UCL [Dept] Flickr</span>
                                 <i class="fab fa-flickr fa-lg"></i>
                             </a>
                         </li>
                         <li class="social__item">
                             <a href="https://medium.com/ucl-antenna" target="_blank">
+                                <span class="visually-hidden">UCL [Dept] Medium</span>
                                 <i class="fab fa-medium fa-lg"></i>
                             </a>
                         </li>

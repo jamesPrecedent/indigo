@@ -82,12 +82,13 @@
       text-decoration: none; }
       .announcement a:hover .arrow-white-right {
         background-position: -5px 0; }
-  .announcement h3 {
+  .announcement h2 {
     font-weight: bold;
     line-height: 1.21;
-    margin-bottom: 2.7rem; }
+    margin-bottom: 2.7rem;
+    color: white; }
     @media only screen and (max-width: 767px) {
-      .announcement h3 {
+      .announcement h2 {
         font-size: 18px;
         font-size: 1.8rem;
         font-weight: bold;
@@ -697,7 +698,7 @@ header .header__open {
 
 .hero--video {
   left: 0;
-  height: 550px;
+  height: 400px;
   overflow: hidden;
   padding: 0; }
   @media only screen and (max-width: 767px) {
